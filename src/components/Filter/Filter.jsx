@@ -1,7 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
-import { PropTypes } from 'prop-types';
+import { useSelector, useDispatch } from 'react-redux';
 import { setFilter } from '../../redux/filter/filter-actions';
 import s from './Filter.module.css';
 
@@ -25,9 +23,5 @@ function Filter() {
     </label>
   );
 }
-
-Filter.propTypes = {
-  onFilterChange: PropTypes.func.isRequired,
-};
 
 export default Filter;

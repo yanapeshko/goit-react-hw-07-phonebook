@@ -29,16 +29,14 @@ export default function ContactForm({ onSubmit }) {
   console.log(onSubmit);
 
   const handleSubmit = e => {
+    resetState();
+    dispatch(addContact({ name, phone }));
     e.preventDefault();
     onSubmit({ name, phone });
-    resetState();
   };
 
   return (
-    <form
-      className={s.form_container}
-      onSubmit={() => dispatch(addContact({ name, phone }))}
-    >
+    <form className={s.form_container} onSubmit={handleSubmit}>
       <label className={s.form_label}>
         Name
         <input
